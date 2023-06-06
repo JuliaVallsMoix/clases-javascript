@@ -16,22 +16,28 @@ class DNI {
 
     // Nos devuelve 'true' o 'false' indicando si el DNI está caducado o no
     estaCaducado() {
-
+        if (this.caducidad > new Date())
+            return true;
+        else return false;    
     }
 
     // Debe devolver 'true' si el DNI está bien formado, o 'false' en caso contrario
     esDniFormatoValido() {
-
+       return /[0-9]{8}[A-Z]/.test(this.numero); 
     }
 
     // Dado un número de DNI, nos calcula la letra. Buscar por Internet como calcular la letra de un DNI
     calculaLetraDni(dni) {
+        let lettersArray = 'TRWAGMYFPDXBNJZSQVHLCKET';
+        let position = dni % 23;
+        let letter = lettersArray.substring(position, position + 1);
 
-
+        return dni + ' - ' + letter;
     }
 }
 
 const midni = new DNI("Pedro Vallés", "1234567A", "1990-10-10");
 console.log(midni.estaCaducado());
 console.log(midni.esDniFormatoValido());
+console.log(midni.calculaLetraDni(12345673));
 

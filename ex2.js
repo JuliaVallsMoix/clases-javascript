@@ -8,15 +8,21 @@ class Coche {
      * @param {number} deposito Indica cuan lleno está el depósito. 100 indica que está completamente lleno, 0 que esta vacío.
      */
     constructor(modelo, matricula, gps) {
+        this.modelo = modelo;
+        this.matricula = matricula;
+        this.gps = gps;
+        this.deposito = 100;
 
     }
 
     // Llena el deposito a 100 unidades de gasolina
     llenarDeposito() {
+        this.deposito = 100;
     }
 
     // Consume una unidad del deposito
     usar() {
+        this.deposito = this.deposito - 1;
     }
 
 }
@@ -35,7 +41,7 @@ console.log("Coche Astra después de usarlo:", astra)
 
 //3. Después de invocar el método 'llenarDeposito', el coche debería tener 100 unidades de gasolina en el deposito
 astra.llenarDeposito()
-console.log("Coche Astra después de usarlo:", astra)
+console.log("Coche Astra después de llenarlo:", astra)
 
 
 //4. Implementa un NUEVO MÉTODO en la clase Coche, que devuelve un bool. Este método se va a llamar 'estaDepositoVacio'. Debe devolver 'true' si al deposito le quedan 0 unidades de gasolina

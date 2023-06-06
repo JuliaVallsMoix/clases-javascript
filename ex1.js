@@ -7,7 +7,7 @@ class Product {
     }
 
     toString() {
-        return this.price // INCOMPLETO
+        return `The price of the ${this.name} is ${this.price}€.` // INCOMPLETO
     }
 }
 
