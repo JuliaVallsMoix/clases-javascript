@@ -16,9 +16,12 @@ class DNI {
 
     // Nos devuelve 'true' o 'false' indicando si el DNI está caducado o no
     estaCaducado() {
-        if (this.caducidad > new Date())
+
+        let fechaCaducidad = new Date(this.caducidad);
+
+        if (fechaCaducidad > new Date()) {
             return true;
-        else return false;    
+        } return false;   
     }
 
     // Debe devolver 'true' si el DNI está bien formado, o 'false' en caso contrario
